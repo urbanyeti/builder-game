@@ -85,9 +85,9 @@ namespace BuilderGameCore
             div.AddRow(SBad.Visual.Alignment.Left, new SBad.Visual.Padding(0,0,0,0));
 
             ButtonFactory buttonFactory = new ButtonFactory(div.Rows[0], new ActionButtonBuilder(_gameState.TextureFrameStore));
-            buttonFactory.Build("action-menu", 0, ButtonLayout.LeftToRight, ButtonClicked);
-            var button = buttonFactory.Execute();
-            div.Rows[0].AddElement(button);
+            
+            div.Rows[0].AddElement(buttonFactory.Build("action-1", 0, ButtonLayout.LeftToRight, ButtonClicked).Run());
+            div.Rows[0].AddElement(buttonFactory.Build("action-2", 1, ButtonLayout.LeftToRight, ButtonClicked).Run());
         }
 
         protected override void Update(GameTime gameTime)
